@@ -1,0 +1,168 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --background: 40 30% 98%;
+    --foreground: 220 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 25%;
+
+    --primary: 180 66% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 180 66% 55%;
+    --primary-dark: 180 66% 35%;
+
+    --secondary: 35 95% 95%;
+    --secondary-foreground: 220 25% 25%;
+    --secondary-light: 35 95% 97%;
+    --secondary-dark: 35 95% 93%;
+
+    --care: 350 85% 60%;
+    --care-foreground: 210 40% 98%;
+    --care-light: 350 85% 70%;
+    --care-dark: 350 85% 50%;
+
+    --comfort: 45 85% 65%;
+    --comfort-foreground: 210 40% 98%;
+    --comfort-light: 45 85% 75%;
+    --comfort-dark: 45 85% 55%;
+
+    --muted: 40 30% 96%;
+    --muted-foreground: 215 25% 40%;
+
+    --accent: 180 66% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 30% 91%;
+    --input: 35 30% 91%;
+    --ring: 12 85% 60%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 220 15% 16%;
+    --sidebar-primary: 12 85% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 100% 97%;
+    --sidebar-accent-foreground: 220 15% 16%;
+    --sidebar-border: 35 30% 91%;
+    --sidebar-ring: 12 85% 60%;
+  }
+
+  .dark {
+    --background: 220 20% 5%;
+    --foreground: 40 30% 98%;
+
+    --card: 222 20% 8%;
+    --card-foreground: 40 30% 98%;
+
+    --popover: 222 20% 8%;
+    --popover-foreground: 40 30% 98%;
+
+    --primary: 12 75% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 35 20% 12%;
+    --secondary-foreground: 40 30% 98%;
+
+    --muted: 35 20% 12%;
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 152 35% 55%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 15% 16%;
+    --input: 35 15% 16%;
+    --ring: 12 75% 55%;
+
+    --sidebar-background: 222 20% 8%;
+    --sidebar-foreground: 40 30% 98%;
+    --sidebar-primary: 12 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 15% 16%;
+    --sidebar-accent-foreground: 40 30% 98%;
+    --sidebar-border: 35 15% 16%;
+    --sidebar-ring: 12 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Global classes */
+  .glass-panel {
+    @apply bg-white/95 dark:bg-black/20 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-white/10 shadow-lg;
+  }
+
+  .glass-card {
+    @apply bg-white/98 dark:bg-black/40 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-white/10 shadow-lg transition-all duration-500 hover:shadow-2xl hover:border-primary/40 hover:scale-[1.02];
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full hover:bg-muted-foreground/50 transition-colors;
+  }
+
+  /* Page transition animations */
+  .page-enter {
+    @apply opacity-0;
+  }
+  
+  .page-enter-active {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+  
+  .page-exit {
+    @apply opacity-100;
+  }
+  
+  .page-exit-active {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+}
